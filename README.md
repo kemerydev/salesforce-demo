@@ -2,11 +2,15 @@ July 6 2016 - coding exercise for salesforce
 
 Kevin R. Emery
 
+
 Requirements
+
 Ruby (2.xx) - see https://rvm.io/rvm/install
+
 Bundler (gem install bundler)
 
-test of basic web form at
+
+Test of basic web form at
 
 https://docs.google.com/forms/d/181whJlBduFo5qtDbxkBDWHjNQML5RutvHWOCjEFWswY
 
