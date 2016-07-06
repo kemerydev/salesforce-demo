@@ -6,8 +6,6 @@ Requirements
 Ruby (2.xx) - see https://rvm.io/rvm/install
 Bundler (gem install bundler)
 
-Description
-
 test of basic web form at
 
 https://docs.google.com/forms/d/181whJlBduFo5qtDbxkBDWHjNQML5RutvHWOCjEFWswY
