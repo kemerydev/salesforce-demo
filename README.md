@@ -3,9 +3,7 @@ July 6 2016 - coding exercise for salesforce
 Kevin R. Emery
 
 Requirements
-
 Ruby (2.xx) - see https://rvm.io/rvm/install
-
 Bundler (gem install bundler)
 
 Description
