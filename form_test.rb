@@ -1,5 +1,6 @@
 require 'selenium-webdriver'
-
+require 'yaml'
+require 'pry'
 class FormTest < Test::Unit::TestCase
   def setup
     @driver = Selenium::WebDriver.for :firefox
@@ -20,14 +21,10 @@ class FormTest < Test::Unit::TestCase
   def required_field_test
     if @driver.find_elements(:xpath => required_items_xpath).size > 0
       @driver.find_element(:xpath => basic_form_xpaths[:submit]).click
-      sleep 1
-      ## the commented assertion fails due to a bug on the form where not all of the 'required' messages are displayed immediately upon clicking submit
-      # assert(@driver.find_element(:xpath => required_message_xpath).displayed?, "could" \
-      #                             " not find an expected missing required field message with the xpath #{required_message_xpath}")
       
-      # the assertion below passes because it merely checks for the presence of at least one warning message and not the visibility of the first one
-      assert(@driver.find_elements(:xpath => required_message_xpath).size > 0, "could" \
-                                  " not find an expected missing required field message with the xpath #{required_message_xpath}")      
+      # the assertion below passes because it checks for the presence of at least one warning message without an assertion on the visibility
+      msg = "could  not find an expected missing required field message with the xpath #{required_message_xpath}"
+      assert(@driver.find_elements(:xpath => required_message_xpath).size > 0, msg)
     end
   end
 
@@ -40,14 +37,7 @@ class FormTest < Test::Unit::TestCase
   end
 
   def basic_form_xpaths
-    xpaths = Hash.new
-    xpaths[:name_field] = "//input[contains(@aria-label,'What is your name?')]"
-    xpaths[:enjoy_development_yes] = "//*[contains(@aria-label,'Do you enjoy development?')]/descendant::*[contains(.,'Yes')]/preceding-sibling::*/input[@type='checkbox']"
-    xpaths[:enjoy_development_no] = "//*[contains(@aria-label,'Do you enjoy development?')]/descendant::*[contains(.,'No')]/preceding-sibling::*/input[@type='checkbox']"
-    xpaths[:favorite_testing_framework] = "//select[contains(@aria-label,'What is your favorite testing framework?')]"
-    xpaths[:comments] = "//textarea[contains(@aria-label,'Comments?')]"
-    xpaths[:submit] = "//input[@type='submit']"
-    xpaths
+    xpaths = YAML.load_file('form_locators.yml')
+    xpaths["basic_form"]
   end
-
 end

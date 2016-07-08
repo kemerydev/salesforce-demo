@@ -1,0 +1,7 @@
+basic_form:
+  :name_field : //input[contains(@aria-label,'What is your name?')]
+  :enjoy_development_yes : //*[contains(@aria-label,'Do you enjoy development?')]/descendant::*[contains(.,'Yes')]/preceding-sibling::*/input[@type='checkbox']
+  :enjoy_development_no : //*[contains(@aria-label,'Do you enjoy development?')]/descendant::*[contains(.,'No')]/preceding-sibling::*/input[@type='checkbox']
+  :favorite_testing_framework : //select[contains(@aria-label,'What is your favorite testing framework?')]
+  :comments : //textarea[contains(@aria-label,'Comments?')]
+  :submit : //input[@type='submit']
