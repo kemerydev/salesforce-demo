@@ -1,6 +1,6 @@
 require 'selenium-webdriver'
 require 'yaml'
-require 'pry'
+
 class FormTest < Test::Unit::TestCase
   def setup
     @driver = Selenium::WebDriver.for :firefox
