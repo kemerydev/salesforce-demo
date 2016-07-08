@@ -2,11 +2,12 @@ July 6 2016 - coding exercise for salesforce
 
 Kevin R. Emery
 
+To Run:  
+ruby form_test_runner.rb
 
 Requirements:
-
-Ruby (2.xx) - see https://rvm.io/rvm/install  
-Bundler (gem install bundler)
+⋅⋅⋅Ruby (2.xx) - see https://rvm.io/rvm/install  
+⋅⋅⋅Bundler (gem install bundler)
 
 
 Test of basic web form at https://docs.google.com/forms/d/181whJlBduFo5qtDbxkBDWHjNQML5RutvHWOCjEFWswY
