@@ -1,4 +1,4 @@
-July 6-8 2016 - coding exercise for salesforce
+July 6-8, 2016 - coding exercise for salesforce
 
 Kevin R. Emery
 
